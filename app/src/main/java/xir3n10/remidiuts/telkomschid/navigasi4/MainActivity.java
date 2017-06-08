@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import layout.HomeFragment;
 import layout.ImportFragment;
 
+import static android.R.attr.id;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -44,6 +46,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        
+        changePage(R.id.nav_home);
+        navigationView.setCheckedItem(R.id.nav_home);
+    }
+
+    private void changePage(int nav_home) {
     }
 
     @Override
@@ -85,6 +93,8 @@ public class MainActivity extends AppCompatActivity
 
         Fragment fragment = null;
 
+        changePage(id);
+        
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
